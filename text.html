@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Preethi ❤️ Vicky</title>
+
+<!-- IMPORTANT FOR PHONE VIEW -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: rgb(133, 85, 85);
+    overflow-x: hidden;
+    background: linear-gradient(135deg,#fff0f5,#ffe6f0);
+}
+
+/* Questions */
+.question {
+    display: none;
+    margin-top: 25vh;
+    animation: fadeIn 1.5s;
+    padding: 15px;
+}
+
+.question.active {
+    display: block;
+}
+
+.question h2 {
+    font-size: 22px;
+    text-shadow: 0 0 10px pink;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    background: pink;
+    width: 80%;
+    max-width: 300px;
+    transition: 0.4s;
+}
+
+button:hover {
+    background: hotpink;
+}
+
+/* Love Section */
+#loveSection {
+    display: none;
+    margin-top: 15vh;
+    padding: 15px;
+}
+
+input[type="range"] {
+    width: 80%;
+}
+
+/* Love Letter */
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 5;
+}
+
+#loveLetter {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    width: 85%;
+    max-width: 350px;
+    z-index: 10;
+}
+
+/* New Question Section */
+#newTab {
+    display: none;
+    margin-top: 20vh;
+    animation: fadeIn 2s;
+    padding: 15px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Roses */
+.rose {
+    position: absolute;
+    font-size: 25px;
+    animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(110vh); }
+}
+
+/* Fireworks */
+.firework {
+    position: absolute;
+    font-size: 25px;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+/* Stars */
+.star {
+    position: absolute;
+    color: white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<h2 style="margin-top:20px;">Happy Birthday Preethi ❤️</h2>
+
+<div id="questionBox">
+
+    <div class="question active">
+        <h2>💍 Will You Marry Me? 💍</h2>
+        <button onclick="nextQuestion()">YES 💖</button>
+    </div>
+
+    <div class="question">
+        <h2>💞 Will You Stay With Me Forever? 💞</h2>
+        <button onclick="nextQuestion()">Forever YES ❤️</button>
+    </div>
+
+    <div class="question">
+        <h2>😜 Even When I Annoy You? 😜</h2>
+        <button onclick="nextQuestion()">Still YES 😂</button>
+    </div>
+
+    <div class="question">
+        <h2>🥹 Do You Promise To Be Mine Always? 🥹</h2>
+        <button onclick="showLoveSection()">YES ALWAYS 💍</button>
+    </div>
+
+</div>
+
+<div id="loveSection">
+    <h2>💓 How Much Do You Love Me? 💓</h2>
+    <input type="range" min="0" max="100" value="50"
+           oninput="updateLove(this.value)">
+    <p id="loveValue">50%</p>
+    <button onclick="showLoveLetter()">Open Love Letter 💌</button>
+</div>
+
+<div id="overlay"></div>
+
+<div id="loveLetter">
+    <h3>💌 My Love Letter</h3>
+    <p>
+        From the moment you entered my life,
+        everything became beautiful.
+        You are my forever,
+        my happiness,
+        my everything ❤️
+    </p>
+    <button onclick="closeLetter()">Close</button>
+</div>
+
+<script>
+
+var current = 0;
+var questions = document.getElementsByClassName("question");
+
+function nextQuestion() {
+    questions[current].classList.remove("active");
+    current++;
+    if (current < questions.length) {
+        questions[current].classList.add("active");
+    }
+}
+
+function showLoveSection() {
+    document.getElementById("questionBox").style.display = "none";
+    document.getElementById("loveSection").style.display = "block";
+    startRoses();
+}
+
+function updateLove(val) {
+    document.getElementById("loveValue").innerHTML = val + "%";
+}
+
+function showLoveLetter() {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("loveLetter").style.display = "block";
+}
+
+function closeLetter() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("loveLetter").style.display = "none";
+}
+
+function startRoses() {
+    setInterval(function() {
+        var rose = document.createElement("div");
+        rose.classList.add("rose");
+        rose.innerHTML = "🌹";
+        rose.style.left = Math.random() * window.innerWidth + "px";
+        document.body.appendChild(rose);
+        setTimeout(() => rose.remove(), 6000);
+    }, 800);
+}
+
+</script>
+
+</body>
+</html>
