@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Just You & Me 💜</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#4b0082,#8000ff,#b266ff);
+    color:white;
+    text-align:center;
+    padding-top:80px;
+}
+
+h1{
+    font-size:40px;
+    text-shadow:0 0 20px white;
+}
+
+.question-box{
+    margin:30px auto;
+    width:80%;
+}
+
+input, textarea{
+    width:70%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    margin-top:10px;
+    font-size:16px;
+}
+
+button{
+    margin-top:30px;
+    padding:12px 25px;
+    font-size:18px;
+    border-radius:30px;
+    border:none;
+    background:white;
+    color:#6a00ff;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+button:hover{
+    background:#b266ff;
+    color:white;
+    transform:scale(1.1);
+}
+
+/* Fade animation */
+.fade-out{
+    animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut{
+    from{ opacity:1; }
+    to{ opacity:0; }
+}
+</style>
+
+</head>
+<body>
+
+<h1>💖 One More Sweet Question 💖</h1>
+
+<div class="question-box">
+    <h3>1️⃣ Who is your favorite person?</h3>
+    <input type="text" placeholder="Type your answer here...">
+</div>
+
+<div class="question-box">
+    <h3>2️⃣ Who is your role model?</h3>
+    <input type="text" placeholder="Type your answer here...">
+</div>
+
+<div class="question-box">
+    <h3>3️⃣ What do you not like about me?</h3>
+    <textarea rows="4" placeholder="Write here..."></textarea>
+</div>
+
+<button onclick="thankYou()">Submit My Love 💕</button>
+
+<script>
+function thankYou(){
+    alert("No matter your answers... I will always love you ❤️💍");
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(function(){
+        window.open("5th.html", "_blank");
+    }, 1500);
+}
+</script>
+
+</body>
+</html>

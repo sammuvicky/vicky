@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forever My Love 💖</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg,#1a001f,#4b0082,#8000ff);
+    color:white;
+    text-align:center;
+    font-family:'Segoe UI',sans-serif;
+    padding:120px 20px;
+    overflow:hidden;
+}
+
+/* Glow Title */
+h1{
+    font-size:48px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px #fff; }
+    to{ text-shadow:0 0 30px #ff99ff; }
+}
+
+p{
+    max-width:800px;
+    margin:40px auto;
+    font-size:22px;
+    line-height:1.9;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(30px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+/* Soft Heart Floating */
+.heart{
+    position:absolute;
+    font-size:22px;
+    animation: float 8s linear infinite;
+    opacity:0.6;
+}
+
+@keyframes float{
+    0%{ transform: translateY(100vh); }
+    100%{ transform: translateY(-10vh); }
+}
+</style>
+
+</head>
+<body>
+
+<h1>💖 My Final Words To You 💖</h1>
+
+<p>
+Preethi… ❤️  
+
+Loving you is not just a feeling — it is the most beautiful truth of my life.  
+
+You are the calm to my chaos,  
+the light in my darkest nights,  
+the smile that fixes my broken days.  
+
+If I had to choose again, in every lifetime,  
+in every universe,  
+in every version of this world —  
+I would still choose you.  
+
+My love for you is not measured in days or years.  
+It is measured in heartbeats…  
+and every heartbeat whispers your name.  
+
+You are not just my today.  
+You are my tomorrow, my forever, my always.  
+
+No matter what happens,  
+no matter how far life takes us,  
+remember this one thing —  
+
+I love you more than words will ever be able to explain. 💍💜  
+
+Forever yours,  
+Vicky ❤️
+</p>
+
+<script>
+/* Floating Hearts */
+setInterval(function(){
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(),8000);
+}, 700);
+</script>
+
+</body>
+</html>

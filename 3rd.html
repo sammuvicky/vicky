@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forever Us 💍</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg, #2e003e, #5e00a3, #8a2be2);
+    color:white;
+    text-align:center;
+    font-family:'Segoe UI',sans-serif;
+    padding-top:120px;
+    overflow:hidden;
+}
+
+/* Glowing Title */
+h1{
+    font-size:50px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px #fff; }
+    to{ text-shadow:0 0 30px #ffccff; }
+}
+
+h2{
+    margin-top:20px;
+    font-size:30px;
+    letter-spacing:2px;
+}
+
+/* Romantic paragraph */
+p{
+    width:70%;
+    margin:30px auto;
+    font-size:20px;
+    line-height:1.8;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(20px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+/* Floating hearts */
+.heart{
+    position:absolute;
+    font-size:25px;
+    animation: float 6s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes float{
+    0%{ transform: translateY(100vh); }
+    100%{ transform: translateY(-10vh); }
+}
+
+/* Button Style */
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border-radius:30px;
+    border:none;
+    background:white;
+    color:#6a00ff;
+    cursor:pointer;
+    transition:0.4s;
+    margin-top:30px;
+}
+
+button:hover{
+    background:#b266ff;
+    color:white;
+    transform:scale(1.1);
+    box-shadow:0 0 20px white;
+}
+</style>
+
+</head>
+<body>
+
+<h1>💖 Our Love Story Continues Forever 💖</h1>
+<h2>Preethi ❤️ Vicky</h2>
+
+<p>
+From the moment our paths crossed, my world changed forever.  
+Every smile of yours became my happiness,  
+every tear of yours became my responsibility,  
+and every heartbeat of mine whispers your name. 💕  
+
+You are not just my love…  
+You are my peace, my strength, my dream, my forever.  
+
+No matter where life takes us,  
+I promise to hold your hand,  
+to protect your heart,  
+and to love you more with every sunrise. 🌅💍  
+
+This is not just a love story…  
+This is our forever story. ❤️
+</p>
+
+<button onclick="openNext()">Next Surprise 💜</button>
+
+<script>
+
+/* Floating Hearts */
+setInterval(function(){
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💜";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(),6000);
+}, 600);
+
+/* Open New Tab */
+function openNext(){
+    window.open("4th.html", "_blank");
+}
+
+</script>
+
+</body>
+</html>
