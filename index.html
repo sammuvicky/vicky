@@ -3,21 +3,71 @@
 <head>
 <title>Preethi ❤️ Vicky</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-    color: rgb(133, 85, 85);
-    overflow-x: hidden;
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 18px;
+    animation: floatUp 6s linear infinite;
 }
 
-/* Questions */
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 25px hotpink; }
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+
+    background: linear-gradient(-45deg, #ff6ec4, #7873f5, #ff9a9e, #fad0c4);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main Heading */
+h1 {
+    font-size: 26px;
+    margin-top: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+/* Question Card */
 .question {
     display: none;
-    margin-top: 120px;
-    animation: fadeIn 1.5s;
+    margin: 60px auto;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 25px rgba(255, 0, 150, 0.5);
+    animation: fadeZoom 1s ease;
+}
+
+@keyframes fadeZoom {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .question.active {
@@ -25,33 +75,38 @@ body {
 }
 
 .question h2 {
-    font-size: 35px;
-    text-shadow: 0 0 15px pink;
+    font-size: 18px;
 }
 
 /* Buttons */
 button {
-    padding: 12px 25px;
-    font-size: 18px;
+    width: 100%;
+    max-width: 280px;
+    padding: 12px;
+    font-size: 16px;
     border-radius: 30px;
     border: none;
     cursor: pointer;
-    margin: 10px;
+    margin: 10px auto;
     background: pink;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
-button:hover {
-    background: hotpink;
+button:active {
+    transform: scale(0.95);
 }
 
 /* Love Section */
 #loveSection {
     display: none;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
-/* Love Letter */
+input[type="range"] {
+    width: 90%;
+}
+
+/* Love Letter Popup */
 #overlay {
     position: fixed;
     width: 100%;
@@ -69,69 +124,34 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgb(25, 22, 183);
+    background: white;
     color: black;
-    padding: 30px;
-    border-radius: 20px;
-    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 85%;
+    max-width: 300px;
     z-index: 10;
 }
 
 /* New Question Section */
 #newTab {
     display: none;
-    margin-top: 120px;
-    animation: fadeIn 2s;
+    margin-top: 60px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Roses */
-.rose {
+/* Decorative Effects */
+.rose, .firework, .star {
     position: absolute;
-    font-size: 30px;
-    animation: fall 6s linear infinite;
+    font-size: 20px;
 }
 
-@keyframes fall {
-    0% { transform: translateY(-10vh); }
-    100% { transform: translateY(110vh); }
-}
-
-/* Fireworks */
-.firework {
-    position: absolute;
-    font-size: 35px;
-    animation: explode 1s ease-out forwards;
-}
-
-@keyframes explode {
-    0% { transform: scale(0); opacity: 1; }
-    100% { transform: scale(2); opacity: 0; }
-}
-
-/* Stars */
-.star {
-    position: absolute;
-    color: white;
-    animation: twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle {
-    from { opacity: 0.2; }
-    to { opacity: 1; }
-}
 </style>
 </head>
 
-<body>
+<body onclick="document.getElementById('romanticSong').play()">
 
-<h1>Happy Birth Day My Love </h1>
+<h1>💖 Happy Birthday My Love Preethi 💖</h1>
 
-<!-- Question Flow -->
 <div id="questionBox">
 
     <div class="question active">
@@ -151,12 +171,11 @@ button:hover {
 
     <div class="question">
         <h2>🥹 Do You Promise To Be Mine Always? 🥹</h2>
-       <button onclick="openNewTab()">YES ALWAYS 💍</button>
+        <button onclick="showLoveSection()">YES ALWAYS 💍</button>
     </div>
 
 </div>
 
-<!-- Love Slider -->
 <div id="loveSection">
     <h2>💓 How Much Do You Love Me? 💓</h2>
     <input type="range" min="0" max="100" value="50"
@@ -165,7 +184,6 @@ button:hover {
     <button onclick="showLoveLetter()">Open Love Letter 💌</button>
 </div>
 
-<!-- Love Letter -->
 <div id="overlay"></div>
 
 <div id="loveLetter">
@@ -180,28 +198,12 @@ button:hover {
     <button onclick="closeLetter()">Close</button>
 </div>
 
-<!-- New Question Section -->
-<div id="newTab">
-
-    <h2>🌸 One More Important Question 🌸</h2>
-    <h1 style="font-size:40px;">Where Did We First Meet? 💕</h1>
-
-    <button onclick="showPlace()">Tell Me 💖</button>
-
-    <div id="placeAnswer" style="display:none; margin-top:20px;">
-        <p>That place will always be special in my heart ❤️</p>
-        <p>Because that’s where my forever started 🥹💍</p>
-    </div>
-
-</div>
-
 <audio id="romanticSong" loop>
     <source src="Unakaga Poranthene.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 
-/* Question Flow */
 var current = 0;
 var questions = document.getElementsByClassName("question");
 
@@ -213,25 +215,15 @@ function nextQuestion() {
     }
 }
 
-/* Show Love Section */
 function showLoveSection() {
     document.getElementById("questionBox").style.display = "none";
     document.getElementById("loveSection").style.display = "block";
-    document.getElementById("romanticSong").play();
-    startRoses();
-    startFireworks();
 }
 
-/* Love Slider */
 function updateLove(val) {
     document.getElementById("loveValue").innerHTML = val + "%";
-    if (val == 100) {
-        document.getElementById("loveSection").style.display = "none";
-        document.getElementById("newTab").style.display = "block";
-    }
 }
 
-/* Love Letter */
 function showLoveLetter() {
     document.getElementById("overlay").style.display = "block";
     document.getElementById("loveLetter").style.display = "block";
@@ -242,55 +234,28 @@ function closeLetter() {
     document.getElementById("loveLetter").style.display = "none";
 }
 
-function showPlace() {
-    document.getElementById("placeAnswer").style.display = "block";
-}
-
-/* Roses */
-function startRoses() {
-    setInterval(function() {
-        var rose = document.createElement("div");
-        rose.classList.add("rose");
-        rose.innerHTML = "🌹";
-        rose.style.left = Math.random() * window.innerWidth + "px";
-        document.body.appendChild(rose);
-        setTimeout(() => rose.remove(), 6000);
-    }, 700);
-}
-
-/* Fireworks */
-function startFireworks() {
-    setInterval(function() {
-        var fire = document.createElement("div");
-        fire.classList.add("firework");
-        fire.innerHTML = "✨";
-        fire.style.left = Math.random() * window.innerWidth + "px";
-        fire.style.top = Math.random() * window.innerHeight + "px";
-        document.body.appendChild(fire);
-        setTimeout(() => fire.remove(), 1000);
-    }, 900);
-}
-
-/* Stars */
+/* Floating Hearts */
 setInterval(function(){
-    var star = document.createElement("div");
-    star.classList.add("star");
-    star.innerHTML = "✨";
-    star.style.left = Math.random() * window.innerWidth + "px";
-    star.style.top = Math.random() * window.innerHeight + "px";
-    document.body.appendChild(star);
-    setTimeout(() => star.remove(), 2000);
-}, 500);
-
-function openNewTab() {
-    window.open("2nd.html", "_blank");
-}
+    var heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 900);
 
 
 </script>
 
+<button onclick="openNext()">Next Surprise 💜</button>
+
+<script>
+function openNext(){
+    window.location.href = "2nd.html";
+}
+</script>
+
 </body>
 
-
-
 </html>
+
