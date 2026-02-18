@@ -3,46 +3,48 @@
 <head>
 <title>Forever My Love 💖</title>
 
+<!-- IMPORTANT FOR MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
     margin:0;
-    padding:0;
+    padding:60px 15px;
     background: linear-gradient(135deg,#1a001f,#4b0082,#8000ff);
     color:white;
     text-align:center;
     font-family:'Segoe UI',sans-serif;
-    padding:120px 20px;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 /* Glow Title */
 h1{
-    font-size:48px;
+    font-size:28px;
     animation: glow 2s infinite alternate;
 }
 
 @keyframes glow{
-    from{ text-shadow:0 0 10px #fff; }
-    to{ text-shadow:0 0 30px #ff99ff; }
+    from{ text-shadow:0 0 8px #fff; }
+    to{ text-shadow:0 0 20px #ff99ff; }
 }
 
 p{
-    max-width:800px;
-    margin:40px auto;
-    font-size:22px;
-    line-height:1.9;
-    animation: fadeIn 3s ease-in-out;
+    max-width:95%;
+    margin:30px auto;
+    font-size:16px;
+    line-height:1.8;
+    animation: fadeIn 2.5s ease-in-out;
 }
 
 @keyframes fadeIn{
-    from{ opacity:0; transform:translateY(30px); }
+    from{ opacity:0; transform:translateY(20px); }
     to{ opacity:1; transform:translateY(0); }
 }
 
-/* Soft Heart Floating */
+/* Floating Hearts */
 .heart{
     position:absolute;
-    font-size:22px;
+    font-size:18px;
     animation: float 8s linear infinite;
     opacity:0.6;
 }
@@ -50,6 +52,12 @@ p{
 @keyframes float{
     0%{ transform: translateY(100vh); }
     100%{ transform: translateY(-10vh); }
+}
+
+/* Make it slightly bigger on tablets */
+@media (min-width:600px){
+    h1{ font-size:36px; }
+    p{ font-size:18px; }
 }
 </style>
 
@@ -59,31 +67,31 @@ p{
 <h1>💖 My Final Words To You 💖</h1>
 
 <p>
-Preethi… ❤️  
+Preethi… ❤️ <br><br>
 
-Loving you is not just a feeling — it is the most beautiful truth of my life.  
+Loving you is not just a feeling — it is the most beautiful truth of my life. <br><br>
 
 You are the calm to my chaos,  
 the light in my darkest nights,  
-the smile that fixes my broken days.  
+the smile that fixes my broken days. <br><br>
 
 If I had to choose again, in every lifetime,  
 in every universe,  
 in every version of this world —  
-I would still choose you.  
+I would still choose you. <br><br>
 
 My love for you is not measured in days or years.  
 It is measured in heartbeats…  
-and every heartbeat whispers your name.  
+and every heartbeat whispers your name. <br><br>
 
 You are not just my today.  
-You are my tomorrow, my forever, my always.  
+You are my tomorrow, my forever, my always. <br><br>
 
 No matter what happens,  
 no matter how far life takes us,  
-remember this one thing —  
+remember this one thing — <br><br>
 
-I love you more than words will ever be able to explain. 💍💜  
+I love you more than words will ever be able to explain. 💍💜 <br><br>
 
 Forever yours,  
 Vicky ❤️
@@ -99,7 +107,7 @@ setInterval(function(){
     document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(),8000);
-}, 700);
+}, 800);
 </script>
 
 </body>

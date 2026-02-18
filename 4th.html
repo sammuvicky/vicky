@@ -3,52 +3,60 @@
 <head>
 <title>Just You & Me 💜</title>
 
+<!-- IMPORTANT FOR MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
     margin:0;
-    padding:0;
+    padding:40px 15px;
     font-family:'Segoe UI', sans-serif;
     background: linear-gradient(135deg,#4b0082,#8000ff,#b266ff);
     color:white;
     text-align:center;
-    padding-top:80px;
+    overflow-x:hidden;
 }
 
 h1{
-    font-size:40px;
-    text-shadow:0 0 20px white;
+    font-size:26px;
+    text-shadow:0 0 15px white;
 }
 
+/* Question Box */
 .question-box{
-    margin:30px auto;
-    width:80%;
+    margin:25px auto;
+    width:100%;
+    max-width:500px;
 }
 
+/* Inputs */
 input, textarea{
-    width:70%;
+    width:100%;
     padding:12px;
-    border-radius:10px;
+    border-radius:12px;
     border:none;
     margin-top:10px;
     font-size:16px;
+    box-sizing:border-box;
 }
 
+/* Button */
 button{
-    margin-top:30px;
-    padding:12px 25px;
-    font-size:18px;
+    margin-top:25px;
+    padding:14px;
+    width:100%;
+    max-width:300px;
+    font-size:16px;
     border-radius:30px;
     border:none;
     background:white;
     color:#6a00ff;
     cursor:pointer;
-    transition:0.4s;
+    transition:0.3s;
 }
 
-button:hover{
-    background:#b266ff;
-    color:white;
-    transform:scale(1.1);
+button:active{
+    transform:scale(0.95);
 }
 
 /* Fade animation */
@@ -59,6 +67,11 @@ button:hover{
 @keyframes fadeOut{
     from{ opacity:1; }
     to{ opacity:0; }
+}
+
+/* Tablet view */
+@media (min-width:600px){
+    h1{ font-size:34px; }
 }
 </style>
 

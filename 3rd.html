@@ -3,53 +3,56 @@
 <head>
 <title>Forever Us 💍</title>
 
+<!-- IMPORTANT FOR MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
     margin:0;
-    padding:0;
+    padding:60px 15px;
     background: linear-gradient(135deg, #2e003e, #5e00a3, #8a2be2);
     color:white;
     text-align:center;
     font-family:'Segoe UI',sans-serif;
-    padding-top:120px;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 /* Glowing Title */
 h1{
-    font-size:50px;
+    font-size:26px;
     animation: glow 2s infinite alternate;
 }
 
 @keyframes glow{
-    from{ text-shadow:0 0 10px #fff; }
-    to{ text-shadow:0 0 30px #ffccff; }
+    from{ text-shadow:0 0 8px #fff; }
+    to{ text-shadow:0 0 20px #ffccff; }
 }
 
 h2{
-    margin-top:20px;
-    font-size:30px;
-    letter-spacing:2px;
+    margin-top:15px;
+    font-size:18px;
+    letter-spacing:1px;
 }
 
 /* Romantic paragraph */
 p{
-    width:70%;
-    margin:30px auto;
-    font-size:20px;
-    line-height:1.8;
-    animation: fadeIn 3s ease-in-out;
+    width:100%;
+    max-width:600px;
+    margin:25px auto;
+    font-size:16px;
+    line-height:1.7;
+    animation: fadeIn 2.5s ease-in-out;
 }
 
 @keyframes fadeIn{
-    from{ opacity:0; transform:translateY(20px); }
+    from{ opacity:0; transform:translateY(15px); }
     to{ opacity:1; transform:translateY(0); }
 }
 
 /* Floating hearts */
 .heart{
     position:absolute;
-    font-size:25px;
+    font-size:18px;
     animation: float 6s linear infinite;
     opacity:0.7;
 }
@@ -61,22 +64,28 @@ p{
 
 /* Button Style */
 button{
-    padding:12px 25px;
-    font-size:18px;
+    width:100%;
+    max-width:300px;
+    padding:14px;
+    font-size:16px;
     border-radius:30px;
     border:none;
     background:white;
     color:#6a00ff;
     cursor:pointer;
-    transition:0.4s;
-    margin-top:30px;
+    transition:0.3s;
+    margin-top:20px;
 }
 
-button:hover{
-    background:#b266ff;
-    color:white;
-    transform:scale(1.1);
-    box-shadow:0 0 20px white;
+button:active{
+    transform:scale(0.95);
+}
+
+/* Tablet Adjustment */
+@media (min-width:600px){
+    h1{ font-size:38px; }
+    h2{ font-size:24px; }
+    p{ font-size:18px; }
 }
 </style>
 
@@ -117,7 +126,7 @@ setInterval(function(){
     document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(),6000);
-}, 600);
+}, 700);
 
 /* Open New Tab */
 function openNext(){
